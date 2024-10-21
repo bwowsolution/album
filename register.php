@@ -141,7 +141,7 @@ if(isset($_SESSION['user'])) {
 
 
     <button class="btn btn-primary w-100 py-2 mt-2" type="submit">Registrati</button>
-    <p class="mt-3 mb-3 text-body-secondary"> Hai gi&agrave; un account? <a href="index.php">Effettua il log-in</a></p>
+    <p class="mt-3 mb-3 text-body-secondary"> Hai gi&agrave; un account? <a href="index.php">Log-in</a></p>
   </form>
 </main>
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>

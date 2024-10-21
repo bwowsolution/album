@@ -141,10 +141,10 @@ if(isset($_SESSION['user'])) {
     <div class="form-check text-start my-3">
       <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
       <label class="form-check-label" for="flexCheckDefault">
-        Remember me
+        Ricordarmi
       </label>
     </div>
-    <button class="btn btn-primary w-100 py-2 mt-2" type="submit">Sign in</button>
+    <button class="btn btn-primary w-100 py-2 mt-2" type="submit">Accedi</button>
     <p class="mt-3 mb-3 text-body-secondary">Non hai un account? <a href="register.php" >Registrati</a></p>
   </form>
 </main>
