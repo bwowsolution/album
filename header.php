@@ -103,23 +103,82 @@ if(!isset($_SESSION['user'])) {
 <body>
 
 
-<header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">BR SONGS</a>
+<div class="container-fluid">
 
-  <ul class="navbar-nav flex-row d-md-none">
-    <li class="nav-item text-nowrap">
-      <button class="nav-link px-3 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle search">
-        <svg class="bi"><use xlink:href="#search"/></svg>
-      </button>
-    </li>
-    <li class="nav-item text-nowrap">
-      <button class="nav-link px-3 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <svg class="bi"><use xlink:href="#list"/></svg>
-      </button>
-    </li>
-  </ul>
+  <div class="row">
+    <div class="sidebar b-white col-md-3 col-lg-2 p-0 ">
+      <div class="offcanvas-md offcanvas-end" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="sidebarMenuLabel">Company name</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-md-flex flex-column p-0 overflow-y-auto">
+        <a class="navbar-brand bg-dark me-0 px-3 fs-6 text-white mb-4" href="#">BR SONGS</a>
+          <ul id="ulSidebar" class="nav flex-column py-3 bg-white">
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <i class="fa-solid fa-headphones"></i>
+                Orders
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <i class="fa-solid fa-music"></i>
+                Products
+              </a>
+            </li>
 
-  <div id="navbarSearch" class="navbar-search w-100 collapse">
-    <input class="form-control w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
-  </div>
-</header>
+
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
+            <span>Categoria</span>
+            <a class="link-secondary" href="#" aria-label="Add a new report">
+              <i class="fa-solid fa-plus"></i>
+            </a>
+          </h6>
+          <ul class="nav flex-column mb-auto">
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <i class="fa-solid fa-compact-disc"></i>
+                Current month
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <i class="fa-solid fa-circle-play"></i>
+                Last quarter
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <i class="fa-solid fa-guitar"></i>
+                Social engagement
+              </a>
+            </li>
+           
+          </ul>
+
+          <hr class="my-3">
+
+          <ul class="nav flex-column mb-auto">
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <i class="fa-solid fa-drum"></i>
+                Impostazioni
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="logout.php">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Esci
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
