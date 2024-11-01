@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['user'])) {
+if(!isset($_SESSION['user']) || !isset($_GET['artistId'])) {
     header("Location: index.php");
     exit();
 }
@@ -172,9 +172,11 @@ if(!isset($_SESSION['user'])) {
       
     </div>
     <main class="container">
-      <?php include 'components/homepage/banner_homepage.php'; ?>
-      <h3 class="pb-4 mb-4 fst-italic border-bottom"> Nuove uscite </h3>
-      <?php include 'components/homepage/new_releases_slider_homepage.php'; ?>
+      <?php include 'components/artists/banner_artists.php'; ?>
+      <h3 class="pb-4 mb-4 fst-italic border-bottom"> Discografia </h3>
+      <?php include 'components/artists/discography_artists.php'; ?>
+      <h3 class="pb-4 mb-4 fst-italic border-bottom"> Compare in </h3>
+      <?php include 'components/artists/appears_on_artists.php'; ?>
       <div class="row g-5">
         <div class="col-md-8">
           <h3 class="pb-4 mb-4 fst-italic border-bottom"> From the Firehose </h3>
