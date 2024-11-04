@@ -45,7 +45,12 @@ $albums = getAlbumsByArtist($conn, $artistId);
 <script>
 $(document).ready(function() {
     var currentIndex = 0;
-    const slidesToShow = 3;
+    var screenWidth = window.innerWidth;
+    if (screenWidth >= 768) {
+        slidesToShow = 3; // Tablet
+    } else {
+        slidesToShow = 1; // Mobile
+    }
     const slideWidth = $('.slide').outerWidth(true);
     const $sliderWrapper = $('.slider-wrapper');
     const totalSlides = $('.slide').length;
@@ -107,12 +112,12 @@ $(document).ready(function() {
             <div class="slide">
                 <div class="card bg-white rounded mb-4 position-relative">
                     <div class="row">
-                        <div class="col-auto p-4">
-                            <img class="bd-placeholder-img rounded" width="150" height="150" src="<?php echo htmlspecialchars($release['cover']); ?>" alt="<?php echo htmlspecialchars($release['albumName']); ?>">
+                        <div class="col-sm-12 col-md-12 col-xl-6 p-4">
+                            <img class="bd-placeholder-img rounded" style="width: 100%;height: auto;" src="<?php echo htmlspecialchars($release['cover']); ?>" alt="<?php echo htmlspecialchars($release['albumName']); ?>">
                         </div>
-                        <div class="col p-4 ps-0 d-flex flex-column position-static">
+                        <div class="col-md-12 col-xl-6 col-sm-12 p-4 d-flex flex-column position-static">
                             <!-- Titolo dell'album come link -->
-                            <label class="d-inline-block mb-1 fs-5">
+                            <label class="d-inline-block mb-1">
                                 <a href="album.php?albumId=<?php echo urlencode($release['albumId']); ?>" class="text-decoration-none">
                                     <strong><?php echo htmlspecialchars($release['albumName']); ?></strong>
                                 </a>
@@ -225,6 +230,25 @@ $(document).ready(function() {
 .slide.blurred {
     filter: blur(5px); /* Applica l'effetto blur */
     opacity: 0.5; /* Diminuisce leggermente l'opacità */
+}
+
+
+/* Apply mobile adjustments */
+@media (max-width: 768px) { /* Adjust breakpoint as needed for mobile */
+    .prev {
+        left: 1rem; /* Position arrow further left for mobile */
+    }
+
+    .next {
+        right: 1rem; /* Position arrow further right for mobile */
+    }
+
+    .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+      padding: 0 10px;
+      transition: filter 0.3s ease, opacity 0.3s ease;
+    }
 }
 
 </style>

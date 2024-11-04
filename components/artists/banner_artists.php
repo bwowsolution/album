@@ -30,13 +30,12 @@ $artist = getArtist($conn);
 <!-- HTML per visualizzare il banner -->
 <div class="banner-container mb-5">
 <?php if ($artist): ?>
-    <div class="artist-row">
-        <div class="artist-img-shadow"></div> <!-- Aggiungi un div per l'ombra -->
-        <div class="artist-image" id="artist-image-container">
+    <div class="artist-row d-flex flex-column flex-md-row flex-sm-column">
+        <div class="artist-image col-lg-3 col-md-4 col-sm-4 col-xs-4 me-md-5 mb-3 mb-md-0 mb-sm-3 p-0" id="artist-image-container">
             <img id="artist-img" src="<?php echo htmlspecialchars($artist['img']); ?>" alt="<?php echo htmlspecialchars($artist['artistName']); ?>" crossorigin="anonymous">
         </div>
-        <div class="artist-name">
-            <h1><?php echo htmlspecialchars($artist['artistName']); ?></h1>
+        <div class="artist-name col-md-6">
+            <span><?php echo htmlspecialchars($artist['artistName']); ?></span>
         </div>
     </div>
 <?php else: ?>
@@ -54,15 +53,14 @@ $artist = getArtist($conn);
 
 .artist-image {
     position: relative; /* Necessario per il posizionamento assoluto dell'ombra */
-    width: 15em; 
-    height: 15em; 
+    width: 30vh;
+    height: 30vh;
     overflow: hidden; 
     border-radius: 50%; 
-    margin-right: 4em; 
 }
 
 .artist-image img {
-    width: 100%; /* L'immagine riempie il contenitore */
+    width: 30vh;
     height: auto; /* Mantiene le proporzioni */
 
     position: relative; /* Necessario per mantenere l'immagine sopra l'ombra */
@@ -82,9 +80,40 @@ $artist = getArtist($conn);
 
 }
 
-.artist-name h1 {
-    font-size: 5em;
+.artist-name span {
+    font-size: 4.5vh;
     margin: 0; /* Rimuove il margine predefinito */
+}
+
+/* Apply mobile adjustments */
+@media (max-width: 768px) { /* Adjust breakpoint as needed for mobile */
+    .artist-image {
+        position: relative; /* Necessario per il posizionamento assoluto dell'ombra */
+        width: 30vh; 
+        height: 30vh; 
+        overflow: hidden; 
+        border-radius: 50%; 
+        margin-bottom: 2em; 
+    }
+
+    .artist-image img {
+        width: 30vh;
+        height: auto; /* Mantiene le proporzioni */
+        position: relative; /* Necessario per mantenere l'immagine sopra l'ombra */
+        z-index: 1; /* Porta l'immagine sopra l'ombra */
+    }
+
+    .artist-name span {
+        font-size: 4.5vh;
+        margin: 0; /* Rimuove il margine predefinito */
+    }
+
+    .artist-row{
+        display:flex;
+        flex-direction:column;
+        margin:0 auto;
+        text-align:center;
+    }
 }
 
 </style>

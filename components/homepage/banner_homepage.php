@@ -30,7 +30,7 @@ $banner = getActiveBanner($conn);
             <h1 class="title"><?php echo $banner['title']; ?></h1>
             <p class="description"><?php echo $banner['description']; ?></p>
             <p class="link">
-                <a href="<?php echo $banner['link_url']; ?>" class="read-more">Continua a leggere...</a>
+                <a href="<?php echo $banner['link_url']; ?>" class="read-more">Vai all'album...</a>
             </p>
         <?php else: ?>
             <h1 class="title">Nulla da vedere :(</h1>
